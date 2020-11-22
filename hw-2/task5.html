@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case "+": 
+                    return Number(a) + Number(b)
+                case "-":
+                    return Number(a) - Number(b)
+                case "*":
+                    return Number(a) * Number(b)
+                case "/":
+                    return Number(a) / Number(b)
+                default:
+                    console.error("Invalid operation: "+operation);
+                    return null
+            }
+        }
+
+        let a = +prompt("Введите число a");
+        let b = +prompt("Введите число b");
+        
+        let operations = ["+", "-", "*", "/", "blabla"];
+        for (i in operations) {
+            console.log("Результат операции " + operations[i] + ": " + mathOperation(a, b, operations[i]));
+        }
+
+    </script>
+</body>
+</html>
