@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function amountAddMessage(amount) {
+            let lastNumber = amount % 10;
+
+            let mnemonic = null;
+            switch (lastNumber) {
+                case 2:
+                case 3:
+                case 4:
+                    mnemonic = "рубля";
+                    break;
+                case 1:
+                    mnemonic = "рубль";
+                    break;
+                default:
+                    mnemonic = "рублей"
+            }
+
+            return `Ваша сумма в ${amount} ${mnemonic} успешно зачислена`
+        }
+
+        let amount = +prompt("Введите сумму в рублях");
+        alert(amountAddMessage(amount));
+    </script>
+</body>
+</html>
