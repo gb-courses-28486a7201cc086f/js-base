@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 2;
+        /*
+        x=5, a=4
+        1) в порядке приоритета вычисляется выражение в скобках: а присваивается удвоенное а -> 4
+        2) вычисляется выражение 1 + результат из скобок = 1 + 4 = 5
+        */
+        let x = 1 + (a *= 2);
+
+        console.log("x="+x+"; a="+a);
+    </script>
+</body>
+</html>
