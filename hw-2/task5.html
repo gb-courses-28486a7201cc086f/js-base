@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="arifmetic.js"></script>
+    <script>
+        "use strict";
+        
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case "+": 
+                    return sum(arg1, arg2);
+                case "-":
+                    return difference(arg1, arg2);
+                case "*":
+                    return composition(arg1, arg2);
+                case "/":
+                    return division(arg1, arg2);
+                default:
+                    console.error("Invalid operation: "+operation);
+                    return null
+            }
+        }
+
+        let a = +prompt("Введите число a");
+        let b = +prompt("Введите число b");
+        
+        let operations = ["+", "-", "*", "/", "blabla"];
+        for (let op of operations) {
+            console.log("Результат операции " + op + ": " + mathOperation(a, b, op));
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        
+        let a = +prompt("Введите число a");
+        let b = +prompt("Введите число b");
+
+        if (a >= 0 && b >= 0) {
+            let res = a - b;
+            alert("Разность="+res);
+        } else if (a < 0 && b < 0) {
+            let res = a * b;
+            alert("Произведение="+res);
+        } else if ((a < 0 && b >= 0) || (a >= 0 && b < 0)) {
+            let res = a + b;
+            alert("Сумма="+res);
+        } else {
+            alert("Ошибка");
+        }
+    </script>
+</body>
+</html>

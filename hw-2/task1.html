@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        
+        let a = 1, b = 1, c, d;
+
+        //1
+        // инкрементируется а, с присваивается новое значение (т.к. префиксная форма)
+        c = ++a;
+        alert(c); //result 2
+
+        //2
+        // постфиксная форма - сначала d присваивается значение b (1), затем b икрементится (2)
+        d = b++;
+        alert(d); //result 1
+
+        //3
+        // а инкрементится (3), новое значение подставляется в выражение, вычисляется 2+3 ->5
+        c = 2 + ++a;
+        alert(c); //result 5
+
+        //4
+        // в выражение подставляется значение b до инкремента (2), затем b увеличивается (3)
+        d = 2 + b++;
+        alert(d); //result 4
+
+        // a, b инкрементились дважды: 1-2-3
+        alert(a); //3
+        alert(b); //3
+    </script>
+</body>
+</html>
