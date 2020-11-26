@@ -6,17 +6,20 @@
     <title>Document</title>
 </head>
 <body>
+    <script src="arifmetic.js"></script>
     <script>
+        "use strict";
+        
         function mathOperation(arg1, arg2, operation) {
             switch (operation) {
                 case "+": 
-                    return Number(a) + Number(b)
+                    return sum(arg1, arg2);
                 case "-":
-                    return Number(a) - Number(b)
+                    return difference(arg1, arg2);
                 case "*":
-                    return Number(a) * Number(b)
+                    return composition(arg1, arg2);
                 case "/":
-                    return Number(a) / Number(b)
+                    return division(arg1, arg2);
                 default:
                     console.error("Invalid operation: "+operation);
                     return null
@@ -27,8 +30,8 @@
         let b = +prompt("Введите число b");
         
         let operations = ["+", "-", "*", "/", "blabla"];
-        for (i in operations) {
-            console.log("Результат операции " + operations[i] + ": " + mathOperation(a, b, operations[i]));
+        for (let op of operations) {
+            console.log("Результат операции " + op + ": " + mathOperation(a, b, op));
         }
 
     </script>

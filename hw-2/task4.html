@@ -6,26 +6,12 @@
     <title>Document</title>
 </head>
 <body>
+    <script src="arifmetic.js"></script>
     <script>
-        function sum(a, b) {
-            return Number(a) + Number(b)
-        }
-
-        function difference(a, b) {
-            return Number(a) - Number(b)
-        }
-
-        function composition(a, b) {
-            return Number(a) * Number(b)
-        }
-
-        function division(a, b) {
-            return Number(a) / Number(b)
-        }
-
+        "use strict";
         
-        let a = +prompt("Введите число a");
-        let b = +prompt("Введите число b");
+        let a = prompt("Введите число a");
+        let b = prompt("Введите число b");
         console.log("Сумма: "+sum(a, b));
         console.log("Разность: "+difference(a, b));
         console.log("Произведение: "+composition(a, b));
