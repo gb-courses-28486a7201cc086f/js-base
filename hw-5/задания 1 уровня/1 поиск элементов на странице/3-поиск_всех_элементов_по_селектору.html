@@ -29,7 +29,12 @@
     и выведите их в консоль. -->
 
     <script>
+        "use strict";
 
+        let hrefs = document.querySelectorAll(".card-body .card-link");
+        for (let v of hrefs) {
+            console.dir(v);
+        }
     </script>
 </body>
 
