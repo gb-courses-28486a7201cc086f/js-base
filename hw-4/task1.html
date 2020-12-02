@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        /**
+         * IntToIbject converts integer from interval [0,999] to object like:
+         * {units: 9, tens: 9, hundreds: 9}
+         * 
+         * @param{number}
+         * @returns{object}
+         */
+        function intToIbject(int) {
+            if (!Number.isInteger(int) || int < 0 || int > 999) {
+                console.log(`Invalid argument: ${int}`);
+                return {};
+            }
+
+            return {
+                units: int % 10,
+                tens: Math.floor((int % 100) / 10),
+                hundreds: Math.floor(int / 100)
+            }
+        }
+
+        // test
+        let tests = ["some str", 9.9, -5, 1000, 0, 10, 15, 100, 345, 505, 890, 999];
+        for (let v of tests) {
+            console.log(`Result for ${v} is`);
+            console.log(intToIbject(v));
+        }
+    </script>
+</body>
+</html>
