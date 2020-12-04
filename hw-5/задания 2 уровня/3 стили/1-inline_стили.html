@@ -14,7 +14,15 @@
     из элементов. -->
 
     <script>
-        
+        "use strict";
+
+        let button = document.querySelector("button");
+        button.setAttribute("style", "font-size:30px");
+        console.log(button.getAttribute("style"));
+
+        let text = document.querySelector("textarea");
+        text.setAttribute("style", "background-color:green");
+        console.log(text.getAttribute("style"));
     </script>
 </body>
 </html>
