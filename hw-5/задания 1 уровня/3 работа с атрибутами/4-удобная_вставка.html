@@ -13,5 +13,17 @@
     <a href="#">link</a>
     используя метод insertAdjacentHTML.
     -->
+
+    <script>
+        "use script";
+
+        let addHTML = '<a href="#">link</a>';
+        let div = document.querySelector("div[class~=\"menu\"");
+        if (div != null) {
+            div.insertAdjacentHTML("afterbegin", addHTML);
+        }
+
+    </script>
+
 </body>
 </html>

@@ -16,7 +16,13 @@
     <!-- Задание. Найдите тег ul. И добавьте ему класс one. -->
 
     <script>
-        
+        "use strict";
+
+        let ul = document.querySelector("body ul");
+        if (ul != null) {
+            ul.setAttribute("class", "one");
+        }
+
     </script>
 </body>
 </html>
