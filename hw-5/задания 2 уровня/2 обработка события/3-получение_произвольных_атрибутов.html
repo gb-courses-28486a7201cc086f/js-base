@@ -21,5 +21,23 @@
     3. При клике из event.target c помощью getAttribute() получите значение
     каждого атрибута и выведите в консоль.
     -->
+
+    <script>
+        "use strict";
+
+        let div = document.querySelector("div");
+        if (div != null) {
+            div.addEventListener("click", event => {
+                let attrs = event.target.attributes;
+                for (let a of attrs) {
+                    // в задании указано: c помощью getAttribute(),
+                    // но можно получить через a.value
+                    let attrValue = event.target.getAttribute(a.name);
+                    console.log(`атрибут ${a.name}: ${attrValue}`);
+                }
+            });
+        }
+
+    </script>
 </body>
 </html>
