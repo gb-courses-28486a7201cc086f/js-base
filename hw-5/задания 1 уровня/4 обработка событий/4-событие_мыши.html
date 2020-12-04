@@ -12,7 +12,14 @@
     появлялось сообщение: "вы навели на textarea" -->
 
     <script>
-        
+        "use strict";
+
+        let txt = document.querySelector("textarea");
+        if (txt != null) {
+            txt.addEventListener("mouseover", () => {
+                console.log("вы навели на textarea");
+            })
+        }
     </script>
 </body>
 </html>

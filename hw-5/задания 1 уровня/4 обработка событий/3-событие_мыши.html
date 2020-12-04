@@ -14,7 +14,14 @@
     alert('клик') -->
 
     <script>
-        
+        "use strict";
+
+        let button = document.querySelector(".btn");
+        if (button != null) {
+            button.addEventListener("click", () => {
+                alert("клик");
+            });
+        }
     </script>
 </body>
 </html>
