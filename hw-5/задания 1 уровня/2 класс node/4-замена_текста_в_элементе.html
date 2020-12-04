@@ -22,6 +22,12 @@
     <!-- Задание. Найдите кнопку с классом .btn-info и сделайте текст в кнопке: "Кнопка".-->
 
     <script>
+        "use strict";
+
+        let button = document.querySelector("button[class~=\"btn-info\"]");
+        if (button != null) {
+            button.textContent = "Кнопка";
+        }
         
     </script>
 </body>

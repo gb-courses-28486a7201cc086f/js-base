@@ -22,7 +22,18 @@
     2. Аналогичным образом удалите элемент с классом .btn-outline-dark -->
 
     <script>
+        "use strict";
 
+        function deleteElemsByClassName(className) {
+            let elemsToDelete = document.getElementsByClassName(className);
+            for (let e of elemsToDelete) {
+                e.remove();
+            }
+        }
+
+        deleteElemsByClassName("btn-outline-warning");
+        deleteElemsByClassName("btn-outline-dark");
+                
     </script>
 </body>
 
