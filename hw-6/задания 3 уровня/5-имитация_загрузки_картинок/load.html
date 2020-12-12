@@ -41,7 +41,18 @@
     -->
 
     <script>
-        
+        "use strict";
+
+        const timeout = 3000;
+
+        setTimeout(() => {
+            let images = document.querySelectorAll("img");
+
+            for (let i = 0; i < images.length; i++) {
+                let imgPath = `images/${i+1}.jpg`
+                images[i].setAttribute("src", imgPath);
+            }
+        }, timeout);
     </script>
 </body>
 </html>

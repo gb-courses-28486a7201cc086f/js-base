@@ -27,7 +27,19 @@
     -->
 
     <script>
-        
+        "use strict";
+
+        const scrollLimit = 500;
+
+        let goToTopEl = document.querySelector("#goToTop");
+        window.addEventListener("scroll", (event) => {
+            console.log(window.pageYOffset);
+            if (window.pageYOffset > scrollLimit) {
+                goToTopEl.style.display = "inline";
+            } else {
+                goToTopEl.style.display = "none";
+            }
+        });
     </script>
 </body>
 </html>
