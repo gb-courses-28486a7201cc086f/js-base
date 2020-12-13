@@ -19,6 +19,9 @@
         let targetAttr = "_blank";
         let linkText = "ссылка";
 
+        let hrefEl = `<a href=${url} target="${targetAttr}">${linkText}</a>`;
+        document.body.insertAdjacentHTML("afterbegin", hrefEl);
+
     </script>
 </body>
 </html>
