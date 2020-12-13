@@ -26,7 +26,24 @@
     -->
 
     <script>
-        
+        "use strict";
+
+        const audioName = "notification.mp3";
+
+        let btn = document.querySelector("button");
+        btn.addEventListener("click", () => {
+            let msg = document.querySelector(".message");
+            if (msg != null) {
+                // не понял, как применить clientHeight,
+                // соообщение можно разместисть внизу страницы с помощью bottom
+                msg.style.top = "auto";
+                msg.style.bottom = `10px`;
+
+                let audioElement = new Audio(audioName);
+                audioElement.play();
+            }
+        });
+
     </script>
 </body>
 

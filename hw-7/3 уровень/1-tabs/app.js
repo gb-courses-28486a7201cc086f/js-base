@@ -20,7 +20,8 @@ const texts = {
 function clickHandler(event) {
     // здесь вызывайте changeText и changeActiveClass, и передавайте
     // им объект события.
-   
+    changeActiveClass(event);
+    changeText(event);
 }
 
 /**
@@ -29,7 +30,10 @@ function clickHandler(event) {
  * @param {MouseEvent} event 
  */
 function changeActiveClass(event) {
-    
+    let preiousActiveEl = document.querySelector('.nav-tabs .active');
+    preiousActiveEl.classList.toggle("active");
+
+    event.target.classList.toggle("active");
 }
 
 /**
@@ -39,5 +43,12 @@ function changeActiveClass(event) {
  * @param {MouseEvent} event 
  */
 function changeText(event) {
-    
+    let currentTabText = event.target.textContent;
+    let tabNumber = currentTabText[currentTabText.length-1]; // номер - это последний символ в имени таба
+
+    document.querySelector(".text").innerText = texts[`text${tabNumber}`];
 }
+
+document.querySelectorAll('.nav-tabs .nav-link').forEach((tab) => {
+    tab.addEventListener('click', clickHandler);
+});
