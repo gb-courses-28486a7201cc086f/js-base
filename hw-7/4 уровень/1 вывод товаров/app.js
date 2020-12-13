@@ -86,6 +86,11 @@ function clickHandler(event) {
     //в showCategory надо передать строку с типом категории, тип берите
     //из атрибута data-type у кнопки, по которой кликнули.
     
+    let productsContainer = document.querySelector(".products");
+    productsContainer.innerHTML = "";
+
+    let category = event.target.dataset["type"];
+    showCategory(category);
 }
 
 /**
@@ -96,7 +101,13 @@ function clickHandler(event) {
  * по которой кликнули.
  */
 function showCategory(category) {
-    
+    let productsMarkup = "";
+    for (let p of products[category]) {
+        productsMarkup += getProductMarkup(p);
+    }
+
+    let productsContainer = document.querySelector(".products");
+    productsContainer.innerHTML = productsMarkup;
 }
 
 /**
@@ -109,5 +120,15 @@ function showCategory(category) {
  * в верху этого файла.
  */
 function getProductMarkup(product) {
-
+    return `
+    <div class="product">
+        <div>${product.name}</div>
+        <img src="${product.imageUrl}" alt="">
+        <div>${product.price}</div>
+        <a href="https://example.com/producs/${product.id}">Подробнее</a>
+    </div>`;
 }
+
+document.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("click", clickHandler);
+});

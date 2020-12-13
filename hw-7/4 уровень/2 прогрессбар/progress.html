@@ -17,6 +17,10 @@
     -->
 
     <script>
+        "use strict";
+
+        const progressStepDelay = 0.5 * 1000; // millisec
+
         let div = document.querySelector('div');
 
         /**
@@ -36,6 +40,12 @@
         заполнения прогресс-бара.
         */
         
+        for (let i = 1; i <= 100; i++) {
+            let delay = i*progressStepDelay;
+            setTimeout(() => {
+                changeProgress(i);
+            }, delay);
+        }
 
     </script>
 </body>
