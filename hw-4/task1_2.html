@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        // ES5
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype = {
+            edit: function(text) {
+                this.text = text;
+            }
+        }
+        Post.prototype.constructor = Post;
+
+        function AttachedPost(author, text, date) {
+            Post.call(this, author, text, date);
+            this.highlighted = false;
+        }
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+        AttachedPost.prototype.makeTextHighlighted = function() {
+            this.highlighted = true;
+        }
+
+        // ES6
+        class Post6 {
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+            edit(text) {
+                this.text = text;
+            }
+        }
+
+        class AttachedPost6 extends Post6 {
+            constructor(author, text, date) {
+                super(author, text, date)
+                this.highlighted = false;
+            }
+            makeTextHighlighted() {
+                this.highlighted = true;
+            }
+        }
+
+        // Test classes
+        let now = new Date();
+
+        /**
+         * testPostsClasses runs some Post, AttachedPost methods
+         */
+        function testPostsClasses(logPrefix, postClass, attachedPostClass) {            
+            console.log(`${logPrefix} Post`);
+            console.log(postClass);
+            console.log(`${logPrefix} AttachedPost`);
+            console.log(attachedPostClass);
+            attachedPostClass.makeTextHighlighted();
+            console.log(`${logPrefix} highlighted AttachedPost`);
+            console.log(attachedPostClass);
+            attachedPostClass.edit("something more interesting");
+            console.log(`${logPrefix} edited AttachedPost`);
+            console.log(attachedPostClass);
+        }
+
+        // ES5 test
+        let p = new Post("Vasily", "some interesting", now.toISOString());
+        let ap = new AttachedPost("Vasily", "some interesting", now.toISOString());
+        testPostsClasses("ES5 style", p, ap)
+
+        // ES6 test
+        let p6 = new Post6("Vasily", "some interesting", now.toISOString());
+        let ap6 = new AttachedPost6("Vasily", "some interesting", now.toISOString());
+        testPostsClasses("ES6 style", p6, ap6)
+
+    </script>
+</body>
+</html>
