@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="#">ссылка</a>
+    <a href="#"></a>
+    <a href="#">ссылка</a>
+    <a href="#"></a>
+
+    <!-- Задание.
+    1. Получите все ссылки.
+    2. Проверьте, есть ли в ссылке текст "ссылка", и если нет, то добавьте. -->
+
+    <script>
+        "use strict";
+
+        const linkText = "ссылка";
+
+        let links = document.querySelectorAll("a");
+        links.forEach(l => {
+            if (l.textContent != linkText) {
+                l.textContent = linkText;
+            }
+            /*
+            Формулировка задачи не очень точная:
+            - текст ссылки строго равен "ссылка", или содержит это слово?
+            - если содержит, то в начале, в конце?
+            - "добавьте" - значит вставить в начало/конец или полностью заменить на "ссылка"?
+
+            В зависимости от ответов, могут быть варианты, например:
+            if (!l.textContent.startsWith(linkText)) {
+                l.insertAdjacentText("afterbegin", linkText + " ");
+            }
+            */
+        });
+    </script>
+</body>
+</html>
