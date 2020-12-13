@@ -19,6 +19,16 @@
         ниже:
         <img src="https://picsum.photos/200/300?random=${счетчик_цикла_здесь}" alt="pic${счетчик_цикла_здесь}">
         */
+
+        "use strict";
+
+        let imgCount = 6;
+
+        for (let i = 1; i <= imgCount; i++) {
+            let imgElTemplate = `<img src="https://picsum.photos/200/300?random=${i}" alt="pic${i}">`;
+            document.body.insertAdjacentHTML("afterbegin", imgElTemplate);
+        }
+        
        
     </script>
 </body>
