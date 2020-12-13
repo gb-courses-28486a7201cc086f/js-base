@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        let startNum = 0, endNum = 10;
+
+        for (let num = startNum; num <= endNum; num++) {
+            let msg;
+            if (num == 0) {
+                msg = "это ноль";
+            } else if (num % 2 == 0) {
+                msg = "четное число";
+            } else {
+                msg = "нечетное число";
+            }
+            console.log(`${num} - ${msg}`);
+        }
+    </script>
+</body>
+</html>

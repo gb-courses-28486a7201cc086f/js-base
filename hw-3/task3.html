@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        const discountPct = 15;
+
+        const products = [ 
+            {                
+                id: 3, 
+                price: 200, 
+            }, 
+            { 
+                id: 4, 
+                price: 900, 
+            }, 
+            { 
+                id: 1, 
+                price: 1000, 
+            }, 
+        ];
+        
+        function makeDiscount(price, discountPct) {
+            return +price * (100 - +discountPct) / 100;
+        }
+
+        // Вариант с map, возвращает новый массив, исходный не меняется
+        let result = products.map(item => {
+            let newPrice = makeDiscount(item.price, discountPct);
+            return Object.assign({}, item, {price: newPrice});
+        })
+        console.log(result);
+
+        // forEach меняет исходный массив
+        products.forEach((item, index) => {
+            item.price = makeDiscount(item.price, discountPct);
+        })
+        console.log(products);
+    </script>
+</body>
+</html>
